@@ -13,9 +13,8 @@ import {Recipe} from "../recipe";
 export class RecipeItemComponent implements OnInit {
   @Input() recipe: Recipe;
   @Input() foodIndex: number;
-  //@Input() typeIndex: number;
-  //selectedFood: Recipe;
   @Output() foodSelected = new EventEmitter<Recipe>();
+  ingredientsOn: boolean = false;
 
   
   ngOnInit() {
@@ -29,7 +28,8 @@ export class RecipeItemComponent implements OnInit {
   }
   
   onIngredients() {
-    
+    this.ingredientsOn = !this.ingredientsOn;
+    console.log(this.ingredientsOn);
   }
 }
 

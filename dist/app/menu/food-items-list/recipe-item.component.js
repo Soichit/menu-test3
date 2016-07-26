@@ -13,9 +13,8 @@ var router_1 = require("@angular/router");
 var recipe_1 = require("../recipe");
 var RecipeItemComponent = (function () {
     function RecipeItemComponent() {
-        //@Input() typeIndex: number;
-        //selectedFood: Recipe;
         this.foodSelected = new core_1.EventEmitter();
+        this.ingredientsOn = false;
     }
     RecipeItemComponent.prototype.ngOnInit = function () {
         //console.log(this.recipe);
@@ -26,6 +25,8 @@ var RecipeItemComponent = (function () {
         this.foodSelected.emit(this.recipe);
     };
     RecipeItemComponent.prototype.onIngredients = function () {
+        this.ingredientsOn = !this.ingredientsOn;
+        console.log(this.ingredientsOn);
     };
     __decorate([
         core_1.Input(), 

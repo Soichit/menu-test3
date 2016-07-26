@@ -8,7 +8,11 @@
     <button class="btn btn-primary" (click)="onIngredients()">Ingredients</button>
     <button class="btn btn-info">Nutrition</button>
     <button class="btn btn-success">Reviews</button>
+    <div *ngIf="ingredientsOn">
+      <li class="list-group-item"  *ngFor="let item of recipe?.ingredients">{{item.name}} ({{item.amount}})</li>
+    </div>
   </div>
+
   <span class="pull-right">
       <h4 style="float: left">${{recipe.price}}</h4>
       <img class="img-responsive"
@@ -16,7 +20,7 @@
            style="max-height: 100px; width: 200px"/>
       <button md-mini-fab>G</button>
       <button md-mini-fab>L</button>
-      <button md-mini-fab>B</button>
+      <button md-mini-fab>V</button>
 
   </span>
 </a>
