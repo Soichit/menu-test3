@@ -1,0 +1,6 @@
+
+<div class="row" style="margin: 20px">
+  <a (click)="onClick()">
+    <rb-recipe-item *ngFor="let recipe of foodItems; let i = index" [recipe]="recipe" [foodIndex]="i"></rb-recipe-item>
+  </a>
+</div>

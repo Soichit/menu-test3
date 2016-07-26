@@ -1,0 +1,15 @@
+
+<div class="row">
+    <ul class="list-group">
+        <a *ngFor="let foodType of foodTypes; let i = index" class="list-group-item clearfix">
+            <div class="pull-right">
+                <button md-mini-fab color="primary" (click)="onSelectedType(i)">
+                    <md-icon *ngIf="selectedIndex != i" class="md-6" src="https://www.chinquapin.com/brushed/Brushed/Source%20Files/ICONS%20+%20FONT/Icons/SVG/arrow-simple-down.svg">v</md-icon>
+                    <md-icon *ngIf="selectedIndex == i" class="md-6" src="https://www.chinquapin.com/brushed/Brushed/Source%20Files/ICONS%20+%20FONT/Icons/SVG/arrow-simple-down.svg">^</md-icon>
+                </button>
+            </div>
+            <h2 class="list-group-item-heading">{{foodType.name}}</h2>
+            <food-items-list *ngIf="selectedIndex == i" [foodItems]="foodType.foodItems"></food-items-list>
+        </a>
+    </ul>
+</div>

@@ -1,0 +1,22 @@
+<a (click)="onSelected(foodIndex)" class="list-group-item clearfix" routerLinkActive="active">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{recipe.name}}</h4>
+    <p class="list-group-item-text">{{recipe.description}}</p>
+    <br />
+    <br />
+    <br />
+    <button class="btn btn-primary" (click)="onIngredients()">Ingredients</button>
+    <button class="btn btn-info">Nutrition</button>
+    <button class="btn btn-success">Reviews</button>
+  </div>
+  <span class="pull-right">
+      <h4 style="float: left">${{recipe.price}}</h4>
+      <img class="img-responsive"
+           src="{{recipe.imagePath}}"
+           style="max-height: 100px; width: 200px"/>
+      <button md-mini-fab>G</button>
+      <button md-mini-fab>L</button>
+      <button md-mini-fab>B</button>
+
+  </span>
+</a>
